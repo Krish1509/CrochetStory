@@ -86,17 +86,16 @@ export default function InfiniteProductMarquee({ images, tags = null }) {
     }
 
     const animate = () => {
-      // Smooth auto-scroll with easing - continuous speed
+      // Smooth auto-scroll with continuous speed
       autoScrollX.current -= 1.2; // Continuous scroll speed
       
-      // Perfect seamless loop - when we scroll past one set width, reset to maintain seamless transition
-      // Since we have 4 sets, we can reset when we've scrolled one set width
-      // This ensures last image on left seamlessly connects to first image on right with no gap
-      if (Math.abs(autoScrollX.current) >= singleSetWidthPx) {
-        autoScrollX.current = autoScrollX.current % singleSetWidthPx;
-        if (autoScrollX.current < 0) {
-          autoScrollX.current += singleSetWidthPx;
-        }
+      // Perfect seamless infinite loop - when we scroll past one set width, reset to maintain seamless transition
+      // Since we have 4 sets of images, when we scroll one full set width, we reset to 0
+      // This creates a perfect loop where last image seamlessly connects to first image
+      if (autoScrollX.current <= -singleSetWidthPx) {
+        // Reset to start of next set (which looks identical due to duplication)
+        // This creates seamless infinite loop - when last image exits left, first appears on right
+        autoScrollX.current = autoScrollX.current + singleSetWidthPx;
       }
       
       // Use smooth interpolation for better animation
@@ -125,14 +124,13 @@ export default function InfiniteProductMarquee({ images, tags = null }) {
     const currentX = x.get();
     autoScrollX.current = currentX;
     
-    // Normalize position to prevent overflow (seamless loop - no gaps)
-    // Keep position within one set width range for seamless looping
-    while (Math.abs(autoScrollX.current) >= singleSetWidthPx) {
-      if (autoScrollX.current < 0) {
-        autoScrollX.current += singleSetWidthPx;
-      } else {
-        autoScrollX.current -= singleSetWidthPx;
-      }
+    // Normalize position for seamless infinite loop - keep within one set width
+    // When position goes beyond one set, reset to maintain seamless continuity
+    while (autoScrollX.current <= -singleSetWidthPx) {
+      autoScrollX.current += singleSetWidthPx;
+    }
+    while (autoScrollX.current > 0) {
+      autoScrollX.current -= singleSetWidthPx;
     }
     x.set(autoScrollX.current);
     
@@ -371,14 +369,13 @@ export default function InfiniteProductMarquee({ images, tags = null }) {
             const currentX = x.get();
             autoScrollX.current = currentX - scrollAmount;
             
-            // Normalize position for seamless loop - ensure no gaps
-            // Keep position within one set width range for seamless looping
-            while (Math.abs(autoScrollX.current) >= singleSetWidthPx) {
-              if (autoScrollX.current < 0) {
-                autoScrollX.current += singleSetWidthPx;
-              } else {
-                autoScrollX.current -= singleSetWidthPx;
-              }
+            // Normalize position for seamless infinite loop - keep within one set width
+            // When position goes beyond one set, reset to maintain seamless continuity
+            while (autoScrollX.current <= -singleSetWidthPx) {
+              autoScrollX.current += singleSetWidthPx;
+            }
+            while (autoScrollX.current > 0) {
+              autoScrollX.current -= singleSetWidthPx;
             }
             
             // Smooth transition
@@ -420,10 +417,9 @@ export default function InfiniteProductMarquee({ images, tags = null }) {
           dragElastic={0.05}
           dragMomentum={false}
           transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 30,
-            mass: 0.5,
+            type: 'tween',
+            ease: 'linear',
+            duration: 0.1,
           }}
           onDragStart={() => {
             setIsDragging(true);

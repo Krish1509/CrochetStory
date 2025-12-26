@@ -63,13 +63,11 @@ export default function Home() {
 
   // State for product images
   const [productImages, setProductImages] = useState([]);
+  // Background images for Why Choose section
   const [backgroundImages, setBackgroundImages] = useState([
+    '/images/imgi_303_images-removebg-preview.png',
+    '/images/imgi_206_images-removebg-preview.png',
     '/images/WhatsApp_Image_2025-12-26_at_12.09.07_PM__1_-removebg-preview.png',
-    '/images/WhatsApp_Image_2025-12-26_at_12.09.08_PM-removebg-preview.png',
-    '/images/WhatsApp_Image_2025-12-26_at_12.09.09_PM__1_-removebg-preview.png',
-    '/images/WhatsApp_Image_2025-12-26_at_12.09.09_PM-removebg-preview.png',
-    '/images/WhatsApp_Image_2025-12-26_at_12.09.11_PM__2_-removebg-preview.png',
-    '/images/WhatsApp_Image_2025-12-26_at_12.09.11_PM__3_-removebg-preview.png',
   ]);
 
   // Fetch products and extract images - Show ALL images
@@ -518,6 +516,26 @@ export default function Home() {
           <StitchLine color="purple" width="100%" className="opacity-20" />
         </div>
         
+        {/* Background images for Why Choose section */}
+        {backgroundImages[0] && (
+          <BackgroundImage
+            src={backgroundImages[0]}
+            position={{ top: '10%', left: '5%' }}
+            size="md"
+            scrollProgress={whyProgress}
+            index={0}
+          />
+        )}
+        {backgroundImages[1] && (
+          <BackgroundImage
+            src={backgroundImages[1]}
+            position={{ top: '50%', right: '5%' }}
+            size="md"
+            scrollProgress={whyProgress}
+            index={1}
+          />
+        )}
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -880,42 +898,39 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-pink-200/40 via-purple-200/30 via-orange-200/40 to-green-200/30 animate-gradient" />
           <div className="absolute inset-0 grain" />
           
-          {/* ONE Hero Anchor Graphic - Large Faint Yarn Loop Behind Text */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
-            animate={{
-              rotate: [0, 360],
-              scale: [1, 1.03, 1],
-            }}
-            transition={{
-              rotate: { duration: 80, repeat: Infinity, ease: 'linear' },
-              scale: { duration: 10, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            style={{ opacity: 0.06 }}
-          >
-            <YarnLoop color="pink" size={400} delay={0} className="sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px]" animated={false} interactive={false} />
-          </motion.div>
-          
-          {/* Reduced Floating Elements - 4 Only, Grouped Left & Right, Away from Headline */}
-          {[
-            // Left side cluster
-            { img: '/images/WhatsApp_Image_2025-12-26_at_12.09.11_PM__3_-removebg-preview.png', pos: { top: '15%', left: '4%' }, size: 'sm' },
-            { img: '/images/sunflowericon.png', pos: { bottom: '12%', left: '5%' }, size: 'sm' },
-            // Right side cluster
-            { img: '/images/imgi_14_default-removebg-preview.png', pos: { top: '20%', right: '4%' }, size: 'sm' },
-            { img: '/images/imgi_297_images-removebg-preview.png', pos: { bottom: '15%', right: '5%' }, size: 'sm' },
-          ].map((item, idx) => {
-            return (
-              <BackgroundImage
-                key={`hero-bg-${idx}-${item.img}`}
-                src={item.img}
-                position={item.pos}
-                size={item.size}
-                scrollProgress={scrollYProgress}
-                index={idx}
-              />
-            );
-          })}
+          {/* Hero Background Images - 4 images with proper sizing and positioning for all screens */}
+          <BackgroundImage
+            key="hero-bg-1"
+            src="/images/imgi_206_images-removebg-preview.png"
+            position={{ top: '8%', left: '2%' }}
+            size="lg"
+            scrollProgress={scrollYProgress}
+            index={0}
+          />
+          <BackgroundImage
+            key="hero-bg-2"
+            src="/images/imgi_23_default-removebg-preview.png"
+            position={{ top: '12%', right: '2%' }}
+            size="lg"
+            scrollProgress={scrollYProgress}
+            index={1}
+          />
+          <BackgroundImage
+            key="hero-bg-3"
+            src="/images/imgi_191_images-removebg-preview.png"
+            position={{ bottom: '10%', left: '3%' }}
+            size="lg"
+            scrollProgress={scrollYProgress}
+            index={2}
+          />
+          <BackgroundImage
+            key="hero-bg-4"
+            src="/images/WhatsApp_Image_2025-12-26_at_12.09.08_PM-removebg-preview.png"
+            position={{ bottom: '8%', right: '3%' }}
+            size="lg"
+            scrollProgress={scrollYProgress}
+            index={3}
+          />
           
 
           <div className="relative z-20 text-center px-4 sm:px-6 max-w-7xl mx-auto">
