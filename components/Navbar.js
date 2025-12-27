@@ -85,8 +85,8 @@ export default function Navbar() {
     } catch (error) {
       console.error('Logout error:', error);
     }
-    // Redirect to login page
-    window.location.href = '/admin/login';
+    // Redirect to products page after login
+    window.location.href = '/products';
   };
 
   // Check if on home page

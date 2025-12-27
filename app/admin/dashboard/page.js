@@ -86,7 +86,7 @@ export default function AdminDashboard() {
       console.error('Logout error:', error);
     }
     // Force page reload to ensure UI updates
-    window.location.href = '/admin/login';
+    window.location.href = '/products';
   };
 
   return (
