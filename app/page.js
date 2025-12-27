@@ -1294,110 +1294,110 @@ export default function Home() {
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-200/10 rounded-full blur-3xl" />
             
             {/* Beautiful Background Images - Restored for Premium Design */}
-            {/* Image 1 - Top Left */}
+            {/* Image 1 - Top Left - Much More Subtle */}
             <motion.div
               initial={{ opacity: 0, x: -50, y: -20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute left-0 top-[8%] w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 opacity-[0.03] sm:opacity-[0.04] md:opacity-[0.05] pointer-events-none z-0"
+              className="absolute left-2 sm:left-4 top-[15%] sm:top-[18%] w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 opacity-[0.015] sm:opacity-[0.02] md:opacity-[0.025] pointer-events-none z-0"
               >
                 <Image
                   src="/images/imgi_23_default-removebg-preview.png"
                   alt=""
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 192px"
+                  sizes="(max-width: 640px) 80px, (max-width: 1024px) 96px, 128px"
                   loading="lazy"
                 />
             </motion.div>
-            
-            {/* Image 2 - Top Right */}
+
+            {/* Image 2 - Top Right - Much More Subtle */}
             <motion.div
               initial={{ opacity: 0, x: 50, y: -20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
-              className="absolute right-0 top-[12%] w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 opacity-[0.03] sm:opacity-[0.04] md:opacity-[0.05] pointer-events-none z-0"
+              className="absolute right-2 sm:right-4 top-[20%] sm:top-[22%] w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 opacity-[0.015] sm:opacity-[0.02] md:opacity-[0.025] pointer-events-none z-0"
               >
                 <Image
                   src="/images/imgi_191_images-removebg-preview.png"
                   alt=""
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 192px"
+                  sizes="(max-width: 640px) 80px, (max-width: 1024px) 96px, 128px"
                   loading="lazy"
                 />
             </motion.div>
             
-            {/* Image 3 - Middle Left */}
+            {/* Image 3 - Middle Left - Better Positioned */}
             <motion.div
               initial={{ opacity: 0, x: -40, y: 0 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
-              className="absolute left-4 sm:left-8 top-[45%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 opacity-[0.025] sm:opacity-[0.035] md:opacity-[0.045] pointer-events-none z-0"
+              className="absolute left-6 sm:left-12 top-[35%] sm:top-[40%] w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-[0.012] sm:opacity-[0.015] md:opacity-[0.02] pointer-events-none z-0"
               >
                 <Image
                   src="/images/imgi_303_images-removebg-preview.png"
                   alt=""
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 80px, (max-width: 1024px) 112px, 176px"
+                  sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 112px"
                   loading="lazy"
                 />
             </motion.div>
-            
-            {/* Image 4 - Middle Right */}
+
+            {/* Image 4 - Middle Right - Better Positioned */}
             <motion.div
               initial={{ opacity: 0, x: 40, y: 0 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.45 }}
-              className="absolute right-4 sm:right-8 top-[50%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 opacity-[0.025] sm:opacity-[0.035] md:opacity-[0.045] pointer-events-none z-0"
+              className="absolute right-6 sm:right-12 top-[42%] sm:top-[45%] w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-[0.012] sm:opacity-[0.015] md:opacity-[0.02] pointer-events-none z-0"
               >
                 <Image
                   src="/images/imgi_206_images-removebg-preview.png"
                   alt=""
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 80px, (max-width: 1024px) 112px, 176px"
+                  sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 112px"
                   loading="lazy"
                 />
             </motion.div>
             
-            {/* Image 5 - Bottom Left */}
+            {/* Image 5 - Bottom Left - Better Positioned */}
             <motion.div
               initial={{ opacity: 0, x: -30, y: 30 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
-              className="absolute left-0 sm:left-4 bottom-[15%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 opacity-[0.025] sm:opacity-[0.035] md:opacity-[0.045] pointer-events-none z-0"
+              className="absolute left-8 sm:left-12 bottom-[8%] sm:bottom-[12%] w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-26 lg:h-26 opacity-[0.01] sm:opacity-[0.012] md:opacity-[0.015] pointer-events-none z-0"
               >
                 <Image
                   src="/images/WhatsApp_Image_2025-12-26_at_12.09.09_PM__1_-removaebg-preview.png"
                   alt=""
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 88px, (max-width: 1024px) 120px, 184px"
+                  sizes="(max-width: 640px) 56px, (max-width: 1024px) 72px, 104px"
                   loading="lazy"
                 />
             </motion.div>
-            
-            {/* Image 6 - Bottom Right */}
+
+            {/* Image 6 - Bottom Right - Better Positioned */}
             <motion.div
               initial={{ opacity: 0, x: 30, y: 30 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.75 }}
-              className="absolute right-0 sm:right-4 bottom-[20%] w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 opacity-[0.025] sm:opacity-[0.035] md:opacity-[0.045] pointer-events-none z-0"
+              className="absolute right-8 sm:right-12 bottom-[5%] sm:bottom-[8%] w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-26 lg:h-26 opacity-[0.01] sm:opacity-[0.012] md:opacity-[0.015] pointer-events-none z-0"
               >
                 <Image
                   src="/images/WhatsApp_Image_2025-12-26_at_12.09.07_PM__1_-removebg-preview.png"
                   alt=""
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 88px, (max-width: 1024px) 120px, 184px"
+                  sizes="(max-width: 640px) 56px, (max-width: 1024px) 72px, 104px"
                   loading="lazy"
                 />
             </motion.div>

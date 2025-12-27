@@ -168,7 +168,7 @@ export default function OrderForm({ product, onClose, onOrder }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/60 backdrop-blur-md z-[9998] overflow-y-auto pt-24 sm:pt-28"
+        className="fixed top-[80px] sm:top-[96px] inset-x-0 bottom-0 bg-black/60 backdrop-blur-md z-[9998] overflow-y-auto"
         onClick={onClose}
         style={{ touchAction: 'pan-y' }}
       >
@@ -204,7 +204,7 @@ export default function OrderForm({ product, onClose, onOrder }) {
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 flex-1 overflow-hidden flex flex-col justify-between">
+            <div className="p-4 sm:p-6 flex-1 overflow-y-auto flex flex-col justify-between">
             {/* Premium Product Preview */}
             <div className="mb-6 p-4 bg-gradient-to-br from-pink-50 via-purple-50/50 to-pink-50 rounded-2xl border-2 border-pink-100/50 shadow-sm">
               <div className="flex gap-4 items-center">
